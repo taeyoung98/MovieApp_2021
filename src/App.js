@@ -36,12 +36,47 @@ function renderFood(dish){
   return <Food key={dish.id} name={dish.name} image={dish.src} rate={dish.rating}/>;
 }
 
-function App() {
-  return (
-    <div className="App">
-      {FoodILike.map(renderFood)};
-    </div>
-  );
+/**
+ ** function component -> return -> screen
+ ** class component -(automatically)react component-> render method -> screen
+ */
+
+// function App() {
+//   return (
+//     <div className="App">
+//       {FoodILike.map(renderFood)};
+//     </div>
+//   );
+// }
+
+class App extends React.Component {
+  state = { // object
+    // Data will change
+    count: 0
+  }
+  add = () => {
+    // console.log("add");
+    
+    // if setState() 사용X -> 새"NEW" state와 함께 render function 호출X
+    // this.state.count += 1; // 직접 접근 불가
+    // this.setState({count: this.state.count+1});
+    
+    // function 방식으로 현재 state 가져오기 : state를 set할 때, react에서 외부의 상태에 의존하지 않는 가장 좋은 방법
+    this.setState(currnet => ({count: currnet.count+1}));
+  };
+  minus = () => {
+    this.setState(currnet => ({count: currnet.count-1}));
+  }; 
+  render(){
+    return (
+      <div>
+        <h1>The number is {this.state.count}</h1>
+        {/* () means 'immediately */}
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
+      </div>
+    );
+  }
 }
 
 export default App;
