@@ -49,7 +49,9 @@ function renderFood(dish){
 //   );
 // }
 
+// life cycle method: react가 component를 생성하고 없애는 방법
 class App extends React.Component {
+  // constructor() // js. not react
   state = { // object
     // Data will change
     count: 0
@@ -61,13 +63,15 @@ class App extends React.Component {
     // this.state.count += 1; // 직접 접근 불가
     // this.setState({count: this.state.count+1});
     
-    // function 방식으로 현재 state 가져오기 : state를 set할 때, react에서 외부의 상태에 의존하지 않는 가장 좋은 방법
+    // function 방식으로 현재 state 가져오기: state를 set할 때, react에서 외부의 상태에 의존하지 않는 가장 좋은 방법
     this.setState(currnet => ({count: currnet.count+1}));
   };
   minus = () => {
     this.setState(currnet => ({count: currnet.count-1}));
   }; 
-  render(){
+  componentDidMount(){} // 2.
+  componentDidUpdate(){} // 4.
+  render(){ // 1. 3.
     return (
       <div>
         <h1>The number is {this.state.count}</h1>
