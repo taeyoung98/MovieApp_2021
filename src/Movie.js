@@ -5,19 +5,19 @@ import "./Movie.css";
 // component가 state가 필요 없을 경우에는 class component가 될 필요X
 function Movie({year, title, summary, poster, genres}){
     return (
-        <div className="moves__movie">
+        <div className="movie">
             {/* <label htmlFor= //in js, 'for' means loop */}
             <img src={poster} alt={title} title={title} />
-            <div className="moves__data">
+            <div className="movies__data">
                 <h3 className="movie__title">{title}</h3>
                 <h5 className="movie__year">{year}</h5>
-                <p className="movie__summary">{summary}</p>
                 {/* map function gives another argument. 
                   * one is a current item and the other is item number. 
                   * you can set item number whatever you want. */}
-                <ul className="genres"> 
+                <ul className="movie__genres"> 
                     {genres.map((genre, index) => <li key={index} className="genres_genre">{genre}</li>)}
                 </ul>
+                <p className="movie__summary">{summary}</p>
             </div>
         </div>
     );
