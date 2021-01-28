@@ -27,7 +27,13 @@ class App extends React.Component {
         ) : (
         <div className="movies">
           {movies.map(movie => (
-            <Movie key={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image} />
+            <Movie 
+              key={movie.id} 
+              year={movie.year} 
+              title={movie.title} 
+              summary={movie.summary} 
+              poster={movie.medium_cover_image}
+              genres={movie.genres} />
           ))}
         </div>
         )
