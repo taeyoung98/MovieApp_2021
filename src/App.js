@@ -3,6 +3,7 @@ import { HashRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
 // import {About as Potato} from "./routes/About";
+import Detail from "./routes/Detail";
 import Navigation from "./routes/Navigation";
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App(){
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
       {/* <Route path="/about" component={Potato} /> */}
+      <Route path="/movie-detail" component={Detail} />
     </HashRouter>
     // BrowserRouter is not easy to set github pages
   );
