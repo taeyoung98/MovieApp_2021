@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import "./Movie.css";
 
 // component가 state가 필요 없을 경우에는 class component가 될 필요X
-function Movie({ year, title, summary, poster, genres }){
+function Movie({ id, year, title, summary, poster, genres }){
     return (
         <div className="movie">
             <Link className="movie__link" to={{
-            pathname: "/movie-detail",
+            pathname: `/movie/${id}`,
             state: { year, title, summary, poster, genres }}}>
                 {/* <label htmlFor= //in js, 'for' means loop */}
                 <img src={poster} alt={title} title={title} />

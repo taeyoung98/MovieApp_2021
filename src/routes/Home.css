@@ -26,12 +26,11 @@ body {
 }
 
 .movies {
-    /* display: flex; */
-    /* justify-content: space-between;   */
-    /* align-items: flex-start; */
+    display: flex;
+    justify-content: space-between;  
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 80px 50px;
     width: 80%;
-    /* height: 343%; */
-    background-color: salmon;
+    height: 343%;
 }

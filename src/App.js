@@ -22,7 +22,7 @@ function App(){
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
       {/* <Route path="/about" component={Potato} /> */}
-      <Route path="/movie-detail" component={Detail} />
+      <Route path="/movie/:id" component={Detail} />
     </HashRouter>
     // BrowserRouter is not easy to set github pages
   );
